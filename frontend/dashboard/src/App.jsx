@@ -5,10 +5,10 @@ import { Routes, Route } from "react-router-dom";
 import Advisor from "./pages/Advisor";
 import MarketPrediction from "./pages/MarketPrediction";
 import History from "./pages/History";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 import { useTranslation } from "react-i18next";
 import Weather from "./components/Weather";
-// import Register from "./pages/Register";
+import Register from "./pages/Register";
 
 export default function App() {
   const { t } = useTranslation(); // Removed wrong il8l
@@ -27,9 +27,9 @@ export default function App() {
 
         {/* Page Routes */}
         <Routes>
-          <Route path="/" element={<Weather />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Register />} /> */}
+          <Route path="/weather" element={<Weather />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Register />} />
 
           <Route path="/advisor" element={<Advisor />} />
           <Route path="/market" element={<MarketPrediction />} />
