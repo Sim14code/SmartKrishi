@@ -14,8 +14,28 @@ def save_output_to_file(text, language):
         file.write(text)
     print(f"✅ Output saved to {filename}")
 
+# def run_advisor(user_input):
+#     analysis = analyze_farm(user_input['crop'], user_input['land_size'])
+#     if not analysis:
+#         return "Sorry, I couldn't find data for that crop."
+
+#     prompt = build_prompt(user_input, analysis)
+#     english_response = query_llm(prompt)
+
+#     if user_input.get("language", "").lower() == "hindi":
+#         translated_response = translate_to_hindi(english_response)
+#         save_output_to_file(translated_response, "hindi")
+#         return translated_response
+
+#     save_output_to_file(english_response, "english")
+#     return english_response
+
 def run_advisor(user_input):
-    analysis = analyze_farm(user_input['crop'], user_input['land_size'])
+    analysis = analyze_farm(
+        user_input['crop'],
+        user_input['land_size'],
+        user_input.get('city', 'Delhi')  # 👈 now weather will match farmer's location
+    )
     if not analysis:
         return "Sorry, I couldn't find data for that crop."
 
@@ -29,3 +49,4 @@ def run_advisor(user_input):
 
     save_output_to_file(english_response, "english")
     return english_response
+
