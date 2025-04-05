@@ -48,7 +48,6 @@
   "weatherDetails": "Weather Details",
   "feelsLike": "Feels Like",
   "Clear": "Clear",
-  "minMax": "न्यूनतम / अधिकतम",
 
   "Wind": "wind",
   "Pressure": "pressure",
@@ -62,5 +61,23 @@
   "signup": "Sign Up",
   "email": "Email",
   "dashboard": "Welcome to Dashboard",
-  "logout": "Logout"
+  "logout": "Logout",
+  "market_price": "Market Price Per Ton",
+  "market_price_definition": "The average selling price of the product in the market per metric ton.",
+  "demand_index": "Demand Index",
+  "demand_index_definition": "A score representing how high the market demand is for the product. Higher values mean higher demand.",
+  "supply_index": "Supply Index",
+  "supply_index_definition": "A score representing the availability of the product in the market. Higher values mean more supply.",
+  "competitor_price": "Competitor Price Per Ton",
+  "competitor_price_definition": "The average price at which competitors are selling the same or similar product.",
+  "economic_indicator": "Economic Indicator",
+  "economic_indicator_definition": "A numerical value that reflects the overall economic health and its impact on crop profitability.",
+  "weather_impact_score": "Weather Impact Score",
+  "weather_impact_score_definition": "A score or category (e.g., Low/Medium/High) showing how much weather affects the crop.",
+  "seasonal_factors": "Seasonal Factors",
+  "seasonal_factors_definition": "A measure of how favorable or unfavorable the season is for a particular crop.",
+  "consumer_trend_index": "Consumer Trend Index",
+  "consumer_trend_index_definition": "Indicates the popularity of a product among consumers, based on trend analysis.",
+  "definitions_heading": "Crop Parameter Definitions",
+  "crop_glossary": "Crop Glossary"
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Register() {
   const { t } = useTranslation();
@@ -8,13 +9,18 @@ export default function Register() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    if (name && password) {
-      localStorage.setItem("registeredName", name);
-      localStorage.setItem("registeredPassword", password);
+    try {
+      const form = new URLSearchParams();
+      form.append("username", name);
+      form.append("password", password);
+
+      await axios.post("http://localhost:5000/register", form);
       alert("Registration successful! Please login.");
       navigate("/");
+    } catch (err) {
+      alert(err.response?.data?.error || "Registration failed");
     }
   };
 
@@ -52,9 +58,9 @@ export default function Register() {
         <button
           type="button"
           onClick={() => navigate("/")}
-          className="w-full bg-blue-500 text-white p-2 rounded"
+          className="w-full bg-green-500 text-white p-2 rounded mt-2"
         >
-          {t("login")} Now
+          {t("login")}
         </button>
       </form>
     </div>

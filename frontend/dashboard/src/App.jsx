@@ -9,9 +9,10 @@ import Login from "./pages/Login";
 import { useTranslation } from "react-i18next";
 import Weather from "./components/Weather";
 import Register from "./pages/Register";
+import CropGlossary from "./components/CropGlossary";
 
 export default function App() {
-  const { t } = useTranslation(); // Removed wrong il8l
+  const { t } = useTranslation();
 
   return (
     <div className="flex min-h-screen">
@@ -27,9 +28,11 @@ export default function App() {
 
         {/* Page Routes */}
         <Routes>
+          <Route path="/" element={<Login />} />
+
+          <Route path="/crop-glossary" element={<CropGlossary />} />
           <Route path="/weather" element={<Weather />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Register />} />
+          <Route path="/register" element={<Register />} />
 
           <Route path="/advisor" element={<Advisor />} />
           <Route path="/market" element={<MarketPrediction />} />

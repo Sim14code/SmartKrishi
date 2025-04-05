@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   User,
   Home,
@@ -9,7 +9,7 @@ import {
   Settings,
   ChevronLeft,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Sidebar() {
   const { t } = useTranslation();
@@ -17,10 +17,12 @@ export default function Sidebar() {
   const isLoggedIn = localStorage.getItem("loggedIn") === "true";
   const name = localStorage.getItem("loggedInName");
 
-  if (!isLoggedIn) {
-    navigate("/");
-    return null;
-  }
+  useEffect(() => {
+    const privateRoutes = ["/advisor", "/market", "/history", "/weather"];
+    if (!isLoggedIn && privateRoutes.includes(window.location.pathname)) {
+      navigate("/");
+    }
+  }, [isLoggedIn, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("loggedIn");
@@ -39,21 +41,23 @@ export default function Sidebar() {
       </div>
 
       {/* User Profile */}
-      <div className="p-4 border-b border-green-700 flex items-center space-x-3">
-        <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center border-2 border-green-400 hover:border-white transition-colors">
-          <User size={200} />
-        </div>
-        <div>
-          <h3 className="font-medium text-sm">name</h3>
-          <div className="flex items-center mt-1">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+      {isLoggedIn && (
+        <div className="p-4 border-b border-green-700 flex items-center space-x-3">
+          <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center border-2 border-green-400 hover:border-white transition-colors">
+            <User size={200} />
+          </div>
+          <div>
+            <h3 className="font-medium text-sm">{name}</h3>
+            <div className="flex items-center mt-1">
+              <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5"></div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Navigation */}
       <nav className="flex-grow py-4 px-2">
@@ -64,6 +68,14 @@ export default function Sidebar() {
           >
             <Home size={18} className="mr-3 text-green-300" />
             {t("Weather")}
+          </Link>
+
+          <Link
+            to="/advisor"
+            className="flex items-center w-full px-3 py-2.5 rounded-lg hover:bg-green-700 transition duration-200"
+          >
+            <Calendar size={18} className="mr-3 text-green-300" />
+            {t("crop_glossary")}
           </Link>
 
           <Link
@@ -100,18 +112,16 @@ export default function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="p-4 text-xs bg-green-900 flex items-center justify-between">
-        <div>
-          <p className="text-green-200">Pro Plan</p>
-          <p className="text-green-400 text-xs">Active until Apr 2026</p>
+      {isLoggedIn && (
+        <div className="p-4 text-xs bg-green-900 flex items-center justify-between">
+          <button
+            onClick={handleLogout}
+            className="bg-green-600 hover:bg-green-500 px-3 py-1.5 rounded text-xs font-medium transition-colors"
+          >
+            {t("Logout")}
+          </button>
         </div>
-        <button
-          onClick={handleLogout}
-          className="bg-green-600 hover:bg-green-500 px-3 py-1.5 rounded text-xs font-medium transition-colors"
-        >
-          t("Logout")
-        </button>
-      </div>
+      )}
     </div>
   );
 }

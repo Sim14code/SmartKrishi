@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const { t } = useTranslation();
@@ -8,17 +9,19 @@ export default function Login() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const registeredName = localStorage.getItem("registeredName");
-    const registeredPassword = localStorage.getItem("registeredPassword");
+    try {
+      const form = new URLSearchParams();
+      form.append("username", name);
+      form.append("password", password);
 
-    if (name === registeredName && password === registeredPassword) {
+      await axios.post("http://localhost:5000/login", form);
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("loggedInName", name);
-      navigate("/dashboard");
-    } else {
-      alert("Invalid credentials!");
+      navigate("/weather");
+    } catch (err) {
+      alert(err.response?.data?.error || "Login failed");
     }
   };
 
@@ -52,6 +55,13 @@ export default function Login() {
           className="w-full bg-blue-500 text-white p-2 rounded"
         >
           {t("submit")}
+        </button>
+        <button
+          type="button"
+          onClick={() => navigate("/register")}
+          className="w-full bg-green-500 text-white p-2 rounded mt-2"
+        >
+          {t("signup")}
         </button>
       </form>
     </div>
