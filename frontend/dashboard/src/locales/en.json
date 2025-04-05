@@ -32,6 +32,7 @@
   "crop_name": "Enter Crop Name",
   "Unable to retrieve your location": "Unable to retrieve your location",
   "Failed to fetch weather data": "Failed to fetch weather data",
+  "weather": "Weather",
   "Geolocation is not supported by your browser": "Geolocation is not supported by your browser",
 
   "financial_goal": "Enter Financial Goal",
