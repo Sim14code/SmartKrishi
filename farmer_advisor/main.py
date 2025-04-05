@@ -10,8 +10,6 @@ user_input = {
 }
 
 
-
-
 result = run_advisor(user_input)
 print("\nFarming Plan:\n")
 print(result)

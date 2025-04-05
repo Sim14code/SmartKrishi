@@ -15,7 +15,7 @@ As an AI assistant, I have provided the following detailed farm planning based o
 - Financial Goal: ₹5,000
 - Monthly Harvest Planning:
   - Crops to Plant: Wheat (14.72 ha)
-  - Required Precious Minerals (Fertilizer): 256.3 kg 
+  - Required Precious Minerals (Fertilizer): 256.3 kg
   - Required Precious Minerals (Pest Control): 20.4 kg
 
 🌱 **Plan:**
