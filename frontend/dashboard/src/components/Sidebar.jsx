@@ -63,15 +63,15 @@ export default function Sidebar() {
       <nav className="flex-grow py-4 px-2">
         <div className="space-y-1">
           <Link
-            to="/"
+            to="/weather"
             className="flex items-center w-full px-3 py-2.5 rounded-lg hover:bg-green-700 transition duration-200"
           >
             <Home size={18} className="mr-3 text-green-300" />
-            {t("Weather")}
+            {t("weather")}
           </Link>
 
           <Link
-            to="/advisor"
+            to="/crop-glossary"
             className="flex items-center w-full px-3 py-2.5 rounded-lg hover:bg-green-700 transition duration-200"
           >
             <Calendar size={18} className="mr-3 text-green-300" />
@@ -118,7 +118,7 @@ export default function Sidebar() {
             onClick={handleLogout}
             className="bg-green-600 hover:bg-green-500 px-3 py-1.5 rounded text-xs font-medium transition-colors"
           >
-            {t("Logout")}
+            {t("logout")}
           </button>
         </div>
       )}

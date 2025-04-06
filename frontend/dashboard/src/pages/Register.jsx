@@ -53,14 +53,14 @@ export default function Register() {
           type="submit"
           className="w-full bg-green-500 text-white p-2 rounded mb-2"
         >
-          {t("submit")}
+          {t("submit_now")}
         </button>
         <button
           type="button"
           onClick={() => navigate("/")}
           className="w-full bg-green-500 text-white p-2 rounded mt-2"
         >
-          {t("login")}
+          {t("register")}
         </button>
       </form>
     </div>

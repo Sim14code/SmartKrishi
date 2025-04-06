@@ -54,7 +54,7 @@ export default function Login() {
           type="submit"
           className="w-full bg-blue-500 text-white p-2 rounded"
         >
-          {t("submit")}
+          {t("login")}
         </button>
         <button
           type="button"

@@ -233,7 +233,7 @@ export default function Weather() {
                   {getTemperature(weather?.main?.temp)}
                 </p>
                 <p className="text-white text-base md:text-lg mt-1">
-                  {t("Feels like")} {getTemperature(weather?.main?.feels_like)}
+                  {t("feelsLike")} {getTemperature(weather?.main?.feels_like)}
                 </p>
                 <p className="capitalize text-white text-base md:text-lg mt-4 flex items-center">
                   {weather?.weather[0]?.main}
@@ -248,7 +248,7 @@ export default function Weather() {
               <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                 <div className="flex items-center text-white mb-2">
                   <Thermometer size={16} className="mr-2" />
-                  <span className="opacity-80 text-sm">{t("Min/Max")}</span>
+                  <span className="opacity-80 text-sm">{t("minMax")}</span>
                 </div>
                 <p className="text-white text-sm md:text-base">
                   {getTemperature(weather?.main?.temp_min)} /{" "}
@@ -258,7 +258,7 @@ export default function Weather() {
               <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                 <div className="flex items-center text-white mb-2">
                   <Droplets size={16} className="mr-2" />
-                  <span className="opacity-80 text-sm">{t("Humidity")}</span>
+                  <span className="opacity-80 text-sm">{t("humidity")}</span>
                 </div>
                 <p className="text-white text-sm md:text-base">
                   {weather?.main?.humidity}%
@@ -267,7 +267,7 @@ export default function Weather() {
               <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                 <div className="flex items-center text-white mb-2">
                   <WindIcon size={16} className="mr-2" />
-                  <span className="opacity-80 text-sm">{t("Wind")}</span>
+                  <span className="opacity-80 text-sm">{t("wind")}</span>
                 </div>
                 <p className="text-white text-sm md:text-base">
                   {weather?.wind?.speed} m/s
@@ -276,7 +276,7 @@ export default function Weather() {
               <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                 <div className="flex items-center text-white mb-2">
                   <Cloud size={16} className="mr-2" />
-                  <span className="opacity-80 text-sm">{t("Pressure")}</span>
+                  <span className="opacity-80 text-sm">{t("pressure")}</span>
                 </div>
                 <p className="text-white text-sm md:text-base">
                   {weather?.main?.pressure} hPa
@@ -288,7 +288,7 @@ export default function Weather() {
           {/* 5-Day Forecast */}
           <div className="lg:col-span-2 bg-white bg-opacity-20 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-lg">
             <h2 className="text-white text-xl mb-6 font-semibold">
-              {t("5-Day Forecast")}
+              {t("forecast")}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {forecast.map((item, index) => (
@@ -318,19 +318,19 @@ export default function Weather() {
             {/* Weather Details */}
             <div className="mt-6 md:mt-8">
               <h2 className="text-white text-xl mb-4 font-semibold">
-                {t("Weather Details")}
+                {t("weatherdetails")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white bg-opacity-20 p-3 md:p-4 rounded-lg">
                   <h3 className="text-white font-medium mb-2 text-sm md:text-base">
-                    {t("Sunrise & Sunset")}
+                    {t("sunrisesunset")}
                   </h3>
                   <div className="flex flex-wrap justify-between">
                     <div className="flex items-center mb-2 md:mb-0">
                       <Sun size={20} className="text-yellow-400 mr-2" />
                       <div>
                         <p className="text-white opacity-80 text-xs">
-                          {t("Sunrise")}
+                          {t("sunrise")}
                         </p>
                         <p className="text-white text-sm">
                           {new Date(
@@ -346,7 +346,7 @@ export default function Weather() {
                       <Sun size={20} className="text-orange-400 mr-2" />
                       <div>
                         <p className="text-white opacity-80 text-xs">
-                          {t("Sunset")}
+                          {t("sunset")}
                         </p>
                         <p className="text-white text-sm">
                           {new Date(
@@ -362,12 +362,12 @@ export default function Weather() {
                 </div>
                 <div className="bg-white bg-opacity-20 p-3 md:p-4 rounded-lg">
                   <h3 className="text-white font-medium mb-2 text-sm md:text-base">
-                    {t("Visibility & Clouds")}
+                    {t("visibilityclouds")}
                   </h3>
                   <div className="flex justify-between">
                     <div>
                       <p className="text-white opacity-80 text-xs">
-                        {t("Visibility")}
+                        {t("visibility")}
                       </p>
                       <p className="text-white text-sm">
                         {(weather?.visibility / 1000).toFixed(1)} km
@@ -375,7 +375,7 @@ export default function Weather() {
                     </div>
                     <div>
                       <p className="text-white opacity-80 text-xs">
-                        {t("Cloudiness")}
+                        {t("cloudiness")}
                       </p>
                       <p className="text-white text-sm">
                         {weather?.clouds?.all}%

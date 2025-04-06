@@ -39,14 +39,10 @@
   "settings": "Settings",
   "No previous records found": "No previous records found",
   "current": "Current Weather",
-  "forecast": "Weather Forecast",
   "temperature": "Temperature",
-  "humidity": "Humidity",
   "windSpeed": "Wind Speed",
-  "currentWeather": "currentWeathe",
+  "register": "Register",
 
-  "weatherDetails": "Weather Details",
-  "feelsLike": "Feels Like",
   "Clear": "Clear",
 
   "Wind": "wind",
@@ -79,5 +75,20 @@
   "consumer_trend_index": "Consumer Trend Index",
   "consumer_trend_index_definition": "Indicates the popularity of a product among consumers, based on trend analysis.",
   "definitions_heading": "Crop Parameter Definitions",
-  "crop_glossary": "Crop Glossary"
+  "crop_glossary": "Crop Glossary",
+
+  "currentWeather": "Current Weather",
+  "forecast": "5-Day Forecast",
+  "weatherDetails": "Weather Details",
+  "sunriseSunset": "Sunrise & Sunset",
+  "sunrise": "sunrise",
+  "sunset": "sunset",
+  "visibilityClouds": "Visibility & Clouds",
+  "visibility": "visibility",
+  "cloudiness": "cloudiness",
+  "minMax": "Min/Max",
+  "humidity": "Humidity",
+  "wind": "wind",
+  "pressure": "pressure",
+  "feelsLike": "Feels like"
 }
