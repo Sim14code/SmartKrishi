@@ -1,7 +1,7 @@
 # advisor/weather.py
 import requests
 
-API_KEY = "API_KEY"
+API_KEY = "c616e7c90fb5944ead097362caa0be95"
 
 def get_weather(city="Delhi"):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"

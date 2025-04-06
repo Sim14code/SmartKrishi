@@ -10,9 +10,8 @@ pesticide_model = joblib.load('models/pesticide_model.pkl')
 CROP_MAP = {
     'Wheat': 0,
     'Rice': 1,
-    'Maize': 2,
-    'Barley': 3,
-    # add more as needed
+    'Soybean': 2,
+    'Corn': 3,
 }
 
 def analyze_farm(crop, land_size, city="Delhi"):

@@ -2,11 +2,11 @@
 from advisor.agent import run_advisor
 
 user_input = {
-    'land_size': 2,
-    'crop': 'Wheat',
-    'goal': 50000,
+    'land_size': 7,
+    'crop': 'Soybean',
+    'goal': 40000,
     'language': 'english',
-    'city': 'Bhopal'
+    'city': 'Pune'
 }
 
 
